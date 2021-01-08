@@ -47,7 +47,7 @@ app.get('/weather', async (req, res) => {
     return res.status(400).json('Must provide a location');
   }
   const result = await forcast(location);
-  if (result?.weather) {
+  if (result) {
     res.json({
       location: location,
       weather: result.main.temp + 'C',
