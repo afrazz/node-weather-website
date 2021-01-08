@@ -13,8 +13,7 @@ weatherForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const location = search.value;
   const weatherData = await fetchWeather(location);
-  console.log(weatherData);
-  if (weatherData.location) {
+  if (weatherData) {
     message.textContent = `${weatherData.location} has a weather of ${weatherData.weather} and ${weatherData.forcast}`;
   } else {
     message.textContent = weatherData;
